@@ -1,18 +1,20 @@
 import React from 'react';
 import SHOP_DATA from './shop.data.js';
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
+import { withRouter } from "react-router-dom";
 
 class ShopPage extends React.Component {
 	constructor(props){
 		super(props);
-
+		//console.log(props.match.params.collection)
 		this.state = {
-			collections: SHOP_DATA
+			collections: SHOP_DATA,
+			//collection: 
 		}
 	}
 
 	render(){
-		const {collections} = this.state;
+		const { collections } = this.state;
 
 		return (
 			<div className="shop-page">
@@ -27,4 +29,4 @@ class ShopPage extends React.Component {
 	}
 }
 
-export default ShopPage;
+export default withRouter(ShopPage);
